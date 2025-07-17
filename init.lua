@@ -60,7 +60,7 @@ local commitdata = getcommit()
 local function downloadFile2(path, func, bypass)
 	if not isfile(path) then
 		local suc, res = pcall(function()
-			return game:HttpGet('https://raw.githubusercontent.com/qwertyui-is-back/CatV5/'..readfile('newcatvape/profiles/commit.txt')..'/'..select(1, path:gsub('newcatvape/', '')), true)
+			return game:HttpGet('https://raw.githubusercontent.com/Trariviste/CatV5/'..readfile('newcatvape/profiles/commit.txt')..'/'..select(1, path:gsub('newcatvape/', '')), true)
 		end)
 		if not suc or res == '404: Not Found' then
 			error(res)
@@ -75,7 +75,7 @@ end
 
 local function downloadFile(path)
 	local suc, res = pcall(function()
-		return game:HttpGet('https://raw.githubusercontent.com/new-qwertyui/CatV5/'..commitdata.sha..'/'..select(1, path:gsub('newcatvape/', '')), true)
+		return game:HttpGet('https://raw.githubusercontent.com/Trariviste/CatV5/'..commitdata.sha..'/'..select(1, path:gsub('newcatvape/', '')), true)
 	end)
 	if (not suc or res == '404: Not Found') then
 		return 
@@ -86,7 +86,7 @@ end
 
 local isfolderv2 = function(filename)
 	local a, b = pcall(function()
-		return game:HttpGet('https://raw.githubusercontent.com/new-qwertyui/CatV5/'.. commitdata.sha .. '/' .. filename)
+		return game:HttpGet('https://raw.githubusercontent.com/Trariviste/CatV5/'.. commitdata.sha .. '/' .. filename)
 	end)
 	return not a or b == '404: Not Found'
 end
