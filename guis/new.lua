@@ -322,7 +322,7 @@ local init: () -> table = function()
 		if not isfile(path) then
 			createDownloader(path)
 			local suc, res = pcall(function()
-				return game:HttpGet('https://raw.githubusercontent.com/new-qwertyui/CatV5/'..readfile('newcatvape/profiles/commit.txt')..'/'..select(1, path:gsub('newcatvape/', '')), true)
+				return game:HttpGet('https://raw.githubusercontent.com/Trariviste/CatV5/'..readfile('newcatvape/profiles/commit.txt')..'/'..select(1, path:gsub('newcatvape/', '')), true)
 			end)
 			if not suc or res == '404: Not Found' then
 				error(res)
